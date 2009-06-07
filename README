@@ -1,1 +1,8 @@
 Just some Java and HTMl code for a website for a fake company. *Just ignore*
+
+
+
+Basically, show a form that get's data from the user.
+Store this data in variables.
+Use the variables to send the data to a MySQL server.
+Redirect user to a thanks page.
