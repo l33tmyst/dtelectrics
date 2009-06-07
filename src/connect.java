@@ -1,7 +1,10 @@
 //This started off as a copy of http://www.kitebird.com/articles/jdbc.html. Who knows where
 //it's gone by the time you read this.
 
+//Got some code from mysql's website and docs as well (mainly the SQL error catching thing
+
 import java.sql.*;
+
 
    public class connect
    {
@@ -11,16 +14,24 @@ import java.sql.*;
 
            try
            {
-               String userName = "dtelectrics";
-               String password = "passw0rd";
-               String url = "jdbc:mysql://localhost/dtelectrics";
+
                Class.forName ("com.mysql.jdbc.Driver").newInstance ();
-               conn = DriverManager.getConnection (url, userName, password);
-               System.out.println ("Connected to database");
-           }
+        	    conn =
+        	        DriverManager.getConnection("jdbc:mysql://localhost/dtelectrics?" +
+        	                                    "user=dtelectrics&password=passw0rd");
+
+        	     // Do something with the Connection
+
+           } catch (SQLException ex) {
+        	     // handle any errors
+        	     System.out.println("SQLException: " + ex.getMessage());
+        	     System.out.println("SQLState: " + ex.getSQLState());
+        	     System.out.println("VendorError: " + ex.getErrorCode());
+        	 }
+
            catch (Exception e)
            {
-               System.err.println ("ERROR: Cann't connect to database");
+               System.err.println ("UNKOWN ERROR: Cann't connect to database");
            }
            finally
            {
