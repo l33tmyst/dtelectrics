@@ -3,7 +3,11 @@
 
 //Got some code from mysql's website and docs as well (mainly the SQL error catching thing
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+
 
 
    public class connect
@@ -16,9 +20,12 @@ import java.sql.*;
            {
 
                Class.forName ("com.mysql.jdbc.Driver").newInstance ();
-        	    conn =
-        	        DriverManager.getConnection("jdbc:mysql://localhost/dtelectrics?" +
-        	                                    "user=dtelectrics&password=passw0rd");
+               String serverName = "localhost";
+               String mydatabase = "dtelectrics";
+               String url = "jdbc:mysql://" + serverName +  "/" + mydatabase; // a JDBC url
+               String username = "dtelectrics";
+               String password = "passw0rd";
+               conn = DriverManager.getConnection(url, username, password);
 
         	     // Do something with the Connection
 
