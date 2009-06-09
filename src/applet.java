@@ -1,5 +1,4 @@
 import java.awt.GridBagLayout;
-import javax.swing.JPanel;
 import javax.swing.JComboBox;
 import java.awt.GridBagConstraints;
 
