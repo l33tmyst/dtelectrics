@@ -1,5 +1,3 @@
-package com.dtelectrics;
-
 import java.awt.GridBagLayout;
 import javax.swing.JComboBox;
 import java.awt.GridBagConstraints;

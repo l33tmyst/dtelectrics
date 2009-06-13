@@ -7,6 +7,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+import com.mysql.jdbc.Statement;
+
 
 
 
@@ -14,7 +16,7 @@ import java.sql.SQLException;
    {
        public static void main (String[] args)
        {
-           Connection conn = null;
+           Connection con = null;
 
            try
            {
@@ -25,10 +27,13 @@ import java.sql.SQLException;
                String url = "jdbc:mysql://" + serverName +  "/" + mydatabase; // a JDBC url
                String username = "dtelectrics";
                String password = "passw0rd";
-               conn = DriverManager.getConnection(url, username, password);
+               con = DriverManager.getConnection(url, username, password);
 
         	     // Do something with the Connection
 
+               
+            
+                 
            } catch (SQLException ex) {
         	     // handle any errors
         	     System.out.println("SQLException: " + ex.getMessage());
@@ -42,11 +47,11 @@ import java.sql.SQLException;
            }
            finally
            {
-               if (conn != null)
+               if (con != null)
                {
                    try
                    {
-                       conn.close ();
+                       con.close ();
                        System.out.println ("Disconnected from database");
                    }
                    catch (Exception e) { /* ignore close errors */ }
@@ -54,3 +59,4 @@ import java.sql.SQLException;
            }
        }
    }
+   
