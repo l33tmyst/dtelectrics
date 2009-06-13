@@ -585,6 +585,8 @@ public class applet extends JFrame{
 	               }
 	           }
 	}
+	
+
+
+	
 	}
-
-
