@@ -11,7 +11,13 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-
+import java.lang.Object;
+import java.awt.Component;
+import java.awt.Container;
+import java.awt.Panel;
+import java.applet.Applet;
+import javax.swing.JApplet;
+import java.applet.AppletStub;
 
 //This is gonna be the main class
 public class applet extends JFrame{
@@ -503,6 +509,7 @@ public class applet extends JFrame{
 			jButton.addActionListener(new java.awt.event.ActionListener() {
 				public void actionPerformed(java.awt.event.ActionEvent e) {
 					database();
+					redirect();
 				}
 			});
 		}
@@ -586,7 +593,9 @@ public class applet extends JFrame{
 	           }
 	}
 	
-
+public void redirect() {
+	
+}
 
 	
 	}
