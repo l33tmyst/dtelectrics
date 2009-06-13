@@ -11,10 +11,10 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-
+import java.applet.*;
 
 //This is gonna be the main class
-public class applet extends JFrame{
+public class applet extends Applet  {
 
 	private static final long serialVersionUID = 1L;
 	private JTextField jTextField0 = null;
