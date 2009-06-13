@@ -420,7 +420,7 @@ public class applet extends JFrame{
 			jTextField9 = new JTextField();
 			jTextField9.setToolTipText("Telephone Number");
 			jTextField9.setDocument
-				(new JTextFieldLimit(11));
+				(new JTextFieldLimit(12));
 			jTextField9.setColumns(11);
 		}
 		return jTextField9;
@@ -500,6 +500,11 @@ public class applet extends JFrame{
 		if (jButton == null) {
 			jButton = new JButton();
 			jButton.setText("Submit");
+			jButton.addActionListener(new java.awt.event.ActionListener() {
+				public void actionPerformed(java.awt.event.ActionEvent e) {
+					database();
+				}
+			});
 		}
 		return jButton;
 	}
@@ -534,7 +539,7 @@ public class applet extends JFrame{
 			String type = (String) jComboBox1.getSelectedItem();
 			String fax = jTextField11.getText();
 			String mobile = jTextField12.getText();
-			String insertString = "insert into customers values(1, '"+title+"', '"+forename+"', '"+surname+"', '"+address0+"', '"+address1+"', '"+address2+"', '"+address3+"', '"+address4+"', '"+address5+"', '"+postcode+"', '"+phone+"', '"+email+"', '"+type+"', '"+fax+"', '"+mobile+"')";
+			String insertString = "insert into customers values('1', '"+title+"', '"+forename+"', '"+surname+"', '"+address0+"', '"+address1+"', '"+address2+"', '"+address3+"', '"+address4+"', '"+address5+"', '"+postcode+"', '"+phone+"', '"+email+"', '"+type+"', '"+fax+"', '"+mobile+"')";
 			java.sql.Statement stmt;
 			 Connection con = null;
 
