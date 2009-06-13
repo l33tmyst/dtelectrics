@@ -7,7 +7,9 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 
-
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 
 
 
@@ -534,7 +536,49 @@ public class applet extends JFrame{
 			String mobile = jTextField12.getText();
 			String insertString = "insert into customers values(1, '"+title+"', '"+forename+"', '"+surname+"', '"+address0+"', '"+address1+"', '"+address2+"', '"+address3+"', '"+address4+"', '"+address5+"', '"+postcode+"', '"+phone+"', '"+email+"', '"+type+"', '"+fax+"', '"+mobile+"')";
 			java.sql.Statement stmt;
-			
+			 Connection con = null;
+
+	           try
+	           {
+
+	               Class.forName ("com.mysql.jdbc.Driver").newInstance ();
+	               String serverName = "localhost";
+	               String mydatabase = "dtelectrics";
+	               String url = "jdbc:mysql://" + serverName +  "/" + mydatabase; // a JDBC url
+	               String username = "dtelectrics";
+	               String password = "passw0rd";
+	               con = DriverManager.getConnection(url, username, password);
+
+	        	     // Do something with the Connection
+
+	               stmt = con.createStatement();
+	   	   		stmt.executeUpdate(insertString);
+
+	            
+	                 
+	           } catch (SQLException ex) {
+	        	     // handle any errors
+	        	     System.out.println("SQLException: " + ex.getMessage());
+	        	     System.out.println("SQLState: " + ex.getSQLState());
+	        	     System.out.println("VendorError: " + ex.getErrorCode());
+	        	 }
+
+	           catch (Exception e)
+	           {
+	               System.err.println ("UNKOWN ERROR: Cann't connect to database");
+	           }
+	           finally
+	           {
+	               if (con != null)
+	               {
+	                   try
+	                   {
+	                       con.close ();
+	                       System.out.println ("Disconnected from database");
+	                   }
+	                   catch (Exception e) { /* ignore close errors */ }
+	               }
+	           }
 	}
 	}
 
