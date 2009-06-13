@@ -15,7 +15,7 @@ import javax.swing.JLabel;
 public class applet extends JFrame{
 
 	private static final long serialVersionUID = 1L;
-	private JTextField forename = null;
+	private JTextField jTextField0 = null;
 	private JTextField jTextField1 = null;
 	private JTextField jTextField2 = null;
 	private JTextField jTextField3 = null;
@@ -37,6 +37,7 @@ public class applet extends JFrame{
 	public applet() {
 		super();
 		initialize();
+
 	}
 
 	/**
@@ -269,14 +270,14 @@ public class applet extends JFrame{
 	 * @return javax.swing.JTextField	
 	 */
 	private JTextField getJTextField() {
-		if (forename == null) {
-			forename = new JTextField();
-			forename.setToolTipText("Forename");
-			forename.setDocument
+		if (jTextField0 == null) {
+			jTextField0 = new JTextField();
+			jTextField0.setToolTipText("Forename");
+			jTextField0.setDocument
 				(new JTextFieldLimit(25));
-			forename.setColumns(25);
+			jTextField0.setColumns(25);
 		}
-		return forename;
+		return jTextField0;
 	}
 
 	/**
@@ -515,5 +516,26 @@ public class applet extends JFrame{
 		return jComboBox2;
 	}
 
+	public void database() {
+			String title = (String) jComboBox2.getSelectedItem();
+			String forename = jTextField0.getText();
+			String surname = jTextField1.getText();
+			String address0 = jTextField2.getText();
+			String address1 = jTextField3.getText();
+			String address2 = jTextField4.getText();
+			String address3 = jTextField5.getText();
+			String address4 = jTextField6.getText();
+			String address5 = jTextField7.getText();
+			String postcode = jTextField8.getText();
+			String phone = jTextField9.getText();
+			String email = jTextField10.getText();
+			String type = (String) jComboBox1.getSelectedItem();
+			String fax = jTextField11.getText();
+			String mobile = jTextField12.getText();
+			String insertString = "insert into customers values(1, '"+title+"', '"+forename+"', '"+surname+"', '"+address0+"', '"+address1+"', '"+address2+"', '"+address3+"', '"+address4+"', '"+address5+"', '"+postcode+"', '"+phone+"', '"+email+"', '"+type+"', '"+fax+"', '"+mobile+"')";
+			java.sql.Statement stmt;
+			
+	}
+	}
 
-}
+
