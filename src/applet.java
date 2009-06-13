@@ -11,13 +11,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-import java.lang.Object;
-import java.awt.Component;
-import java.awt.Container;
-import java.awt.Panel;
-import java.applet.Applet;
-import javax.swing.JApplet;
-import java.applet.AppletStub;
+
 
 //This is gonna be the main class
 public class applet extends JFrame{
@@ -58,7 +52,7 @@ public class applet extends JFrame{
 		gridBagConstraints31.gridx = 0;
 		gridBagConstraints31.gridy = 18;
 		jLabel14 = new JLabel();
-		jLabel14.setText("Postcode");
+		jLabel14.setText("Postcode*");
 		GridBagConstraints gridBagConstraints30 = new GridBagConstraints();
 		gridBagConstraints30.fill = GridBagConstraints.VERTICAL;
 		gridBagConstraints30.gridy = 1;
@@ -83,7 +77,7 @@ public class applet extends JFrame{
 		gridBagConstraints26.gridx = 0;
 		gridBagConstraints26.gridy = 22;
 		jLabel10 = new JLabel();
-		jLabel10.setText("Email Address");
+		jLabel10.setText("Email Address*");
 		GridBagConstraints gridBagConstraints25 = new GridBagConstraints();
 		gridBagConstraints25.gridx = 0;
 		gridBagConstraints25.gridy = 20;
@@ -118,22 +112,22 @@ public class applet extends JFrame{
 		gridBagConstraints19.gridx = 0;
 		gridBagConstraints19.gridy = 6;
 		jLabel3 = new JLabel();
-		jLabel3.setText("Address Line 1");
+		jLabel3.setText("Address Line 1*");
 		GridBagConstraints gridBagConstraints18 = new GridBagConstraints();
 		gridBagConstraints18.gridx = 0;
 		gridBagConstraints18.gridy = 4;
 		jLabel2 = new JLabel();
-		jLabel2.setText("Surname");
+		jLabel2.setText("Surname*");
 		GridBagConstraints gridBagConstraints17 = new GridBagConstraints();
 		gridBagConstraints17.gridx = 0;
 		gridBagConstraints17.gridy = 2;
 		jLabel1 = new JLabel();
-		jLabel1.setText("Forename");
+		jLabel1.setText("Forename*");
 		GridBagConstraints gridBagConstraints16 = new GridBagConstraints();
 		gridBagConstraints16.gridx = 0;
 		gridBagConstraints16.gridy = 0;
 		jLabel = new JLabel();
-		jLabel.setText("Title");
+		jLabel.setText("Title*");
 		GridBagConstraints gridBagConstraints15 = new GridBagConstraints();
 		gridBagConstraints15.gridx = 0;
 		gridBagConstraints15.gridheight = 2;
@@ -213,7 +207,7 @@ public class applet extends JFrame{
 		gridBagConstraints.gridy = 0;
 		gridBagConstraints.weightx = 1.0;
 		gridBagConstraints.gridx = 0;
-		this.setSize(581, 834);
+		this.setSize(580, 600);
 		this.setLayout(new GridBagLayout());
 		this.add(getJTextField(), gridBagConstraints1);
 		this.add(getJTextField1(), gridBagConstraints2);
