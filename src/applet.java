@@ -584,7 +584,11 @@ public class applet extends Applet  {
 	                   catch (Exception e) { /* ignore close errors */ }
 	               }
 	           }
-	}
+	
+jLabel.setText("Thank you");
+jLabel.setForeground(Color.red);
+
+}
 	
 public void redirect() {
 	
