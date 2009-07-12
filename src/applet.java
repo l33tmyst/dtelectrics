@@ -1,21 +1,35 @@
-import java.awt.GridBagLayout;
-import javax.swing.JComboBox;
-import java.awt.GridBagConstraints;
+/*
+This is the code for a Java applet that allows visitors to book jobs with DT Electrics (a
+fictional company). 
+License: GPL
+Author: Harry Rickards <hrickards@l33tmyst.com>
+*/
 
+//Imports the neccessary classes for the GUI (Swing and AWT).
+import java.awt.Color;
+import java.awt.GridBagLayout;
+import java.awt.GridBagConstraints;
+import javax.swing.JComboBox;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 
+//Imports the classes needed to connect to a MySQL datase. Needs the Java DataBase Connector
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+//Imports the class needed for the code to be a Java applet
 import java.applet.*;
 
-//This is gonna be the main class
+//Sets up the class 'applet' as extending Applet (from java.applet.*)
 public class applet extends Applet  {
 
-	private static final long serialVersionUID = 1L;
+	//Adds a serialVersionUID string to shut Eclipse up
+	private static final long serialVersionUID = -663433958959361836L;
+	
+	
+	//Creates the variables for all the text fields, labels and combo boxes
 	private JTextField jTextField0 = null;
 	private JTextField jTextField1 = null;
 	private JTextField jTextField2 = null;
@@ -31,21 +45,33 @@ public class applet extends Applet  {
 	private JTextField jTextField11 = null;
 	private JTextField jTextField12 = null;
 	private JButton jButton = null;
+	private JLabel jLabel = null;
+	private JLabel jLabel1 = null;
+	private JLabel jLabel2 = null;
+	private JLabel jLabel3 = null;
+	private JLabel jLabel4 = null;
+	private JLabel jLabel5 = null;
+	private JLabel jLabel6 = null;
+	private JLabel jLabel7 = null;
+	private JLabel jLabel8 = null;
+	private JLabel jLabel9 = null;
+	private JLabel jLabel10 = null;
+	private JLabel jLabel11 = null;
+	private JLabel jLabel12 = null;
+	private JLabel jLabel13 = null;
+	private JComboBox jComboBox2 = null;
+	private JLabel jLabel14 = null;
+	
 
-	/**
-	 * This is the default constructor
-	 */
+	//The main class
+	//Initialises everything
 	public applet() {
 		super();
 		initialize();
 
 	}
 
-	/**
-	 * This method initializes this
-	 * 
-	 * @return void
-	 */
+	//This method is referenced by applet() and sets the location and text of everything
 	private void initialize() {
 		GridBagConstraints gridBagConstraints31 = new GridBagConstraints();
 		gridBagConstraints31.gridx = 0;
@@ -221,7 +247,7 @@ public class applet extends Applet  {
 		this.add(getJTextField10(), gridBagConstraints11);
 		this.add(getJComboBox1(), gridBagConstraints12);
 		this.add(getJTextField11(), gridBagConstraints13);
-		this.add(getJTextField112(), gridBagConstraints14);
+		this.add(getJTextField12(), gridBagConstraints14);
 		this.add(getJButton(), gridBagConstraints15);
 		this.add(jLabel, gridBagConstraints16);
 		this.add(jLabel1, gridBagConstraints17);
@@ -241,35 +267,8 @@ public class applet extends Applet  {
 		this.add(jLabel14, gridBagConstraints31);
 	}
 
-	/**
-	 * This method initializes jComboBox	
-	 * 	
-	 * @return javax.swing.JComboBox	
-	 */
-	private JLabel jLabel = null;
-	private JLabel jLabel1 = null;
-	private JLabel jLabel2 = null;
-	private JLabel jLabel3 = null;
-	private JLabel jLabel4 = null;
-	private JLabel jLabel5 = null;
-	private JLabel jLabel6 = null;
-	private JLabel jLabel7 = null;
-	private JLabel jLabel8 = null;
-	private JLabel jLabel9 = null;
-	private JLabel jLabel10 = null;
-	private JLabel jLabel11 = null;
-	private JLabel jLabel12 = null;
-	private JLabel jLabel13 = null;
-	private JComboBox jComboBox2 = null;
-	private JLabel jLabel14 = null;
-	
 
-
-	/**
-	 * This method initializes jTextField	
-	 * 	
-	 * @return javax.swing.JTextField	
-	 */
+	//Creates jTextField0 and sets the field length, tooltip etc.
 	private JTextField getJTextField() {
 		if (jTextField0 == null) {
 			jTextField0 = new JTextField();
@@ -281,11 +280,7 @@ public class applet extends Applet  {
 		return jTextField0;
 	}
 
-	/**
-	 * This method initializes jTextField1	
-	 * 	
-	 * @return javax.swing.JTextField	
-	 */
+	//Creates jTextField1 and sets the field length, tooltip etc.
 	private JTextField getJTextField1() {
 		if (jTextField1 == null) {
 			jTextField1 = new JTextField();
@@ -297,11 +292,7 @@ public class applet extends Applet  {
 		return jTextField1;
 	}
 
-	/**
-	 * This method initializes jTextField2	
-	 * 	
-	 * @return javax.swing.JTextField	
-	 */
+	//Creates jTextField2 and sets the field length, tooltip etc.
 	private JTextField getJTextField2() {
 		if (jTextField2 == null) {
 			jTextField2 = new JTextField();
@@ -313,11 +304,7 @@ public class applet extends Applet  {
 		return jTextField2;
 	}
 
-	/**
-	 * This method initializes jTextField3	
-	 * 	
-	 * @return javax.swing.JTextField	
-	 */
+	//Creates jTextField3 and sets the field length, tooltip etc.
 	private JTextField getJTextField3() {
 		if (jTextField3 == null) {
 			jTextField3 = new JTextField();
@@ -329,11 +316,7 @@ public class applet extends Applet  {
 		return jTextField3;
 	}
 
-	/**
-	 * This method initializes jTextField4	
-	 * 	
-	 * @return javax.swing.JTextField	
-	 */
+	//Creates jTextField4 and sets the field length, tooltip etc.
 	private JTextField getJTextField4() {
 		if (jTextField4 == null) {
 			jTextField4 = new JTextField();
@@ -345,11 +328,7 @@ public class applet extends Applet  {
 		return jTextField4;
 	}
 
-	/**
-	 * This method initializes jTextField5	
-	 * 	
-	 * @return javax.swing.JTextField	
-	 */
+	//Creates jTextField5 and sets the field length, tooltip etc.
 	private JTextField getJTextField5() {
 		if (jTextField5 == null) {
 			jTextField5 = new JTextField();
@@ -361,11 +340,7 @@ public class applet extends Applet  {
 		return jTextField5;
 	}
 
-	/**
-	 * This method initializes jTextField6	
-	 * 	
-	 * @return javax.swing.JTextField	
-	 */
+	//Creates jTextField6 and sets the field length, tooltip etc.
 	private JTextField getJTextField6() {
 		if (jTextField6 == null) {
 			jTextField6 = new JTextField();
@@ -377,11 +352,7 @@ public class applet extends Applet  {
 		return jTextField6;
 	}
 
-	/**
-	 * This method initializes jTextField7	
-	 * 	
-	 * @return javax.swing.JTextField	
-	 */
+	//Creates jTextField7 and sets the field length, tooltip etc.
 	private JTextField getJTextField7() {
 		if (jTextField7 == null) {
 			jTextField7 = new JTextField();
@@ -393,11 +364,7 @@ public class applet extends Applet  {
 		return jTextField7;
 	}
 
-	/**
-	 * This method initializes jTextField8	
-	 * 	
-	 * @return javax.swing.JTextField	
-	 */
+	//Creates jTextField8 and sets the field length, tooltip etc.
 	private JTextField getJTextField8() {
 		if (jTextField8 == null) {
 			jTextField8 = new JTextField();
@@ -409,11 +376,7 @@ public class applet extends Applet  {
 		return jTextField8;
 	}
 
-	/**
-	 * This method initializes jTextField9	
-	 * 	
-	 * @return javax.swing.JTextField	
-	 */
+	//Creates jTextField9 and sets the field length, tooltip etc.
 	private JTextField getJTextField9() {
 		if (jTextField9 == null) {
 			jTextField9 = new JTextField();
@@ -425,11 +388,7 @@ public class applet extends Applet  {
 		return jTextField9;
 	}
 
-	/**
-	 * This method initializes jTextField10	
-	 * 	
-	 * @return javax.swing.JTextField	
-	 */
+	//Creates jTextField10 and sets the field length, tooltip etc.
 	private JTextField getJTextField10() {
 		if (jTextField10 == null) {
 			jTextField10 = new JTextField();
@@ -442,14 +401,10 @@ public class applet extends Applet  {
 		return jTextField10;	
 	}
 
-	/**
-	 * This method initializes jComboBox1	
-	 * 	
-	 * @return javax.swing.JComboBox	
-	 */
-	
+	//Creates the string array variable jobs. It contains a list of all the jobs DT Electrics do.
 	String[] jobs = { "Rectify Security Light Failure", "Repair cable damage from poor DIY", "Repair cooker socket", "Repair wiring to garage light", "Repair wiring to immersion heater", "Replace Broken Switch", "Replace damaged shaving socket", "Replace faulty wiring to shower", "Replace faulty fuse box", "Replace RCD socket", "Replace wiring to extractor fan", "Rewire dimmer switch", "Rewire wall light", "Test system" }; 
 	
+	//Creates jComboBox1 and sets the options to the string array jobs
 	private JComboBox getJComboBox1() {
 		if (jComboBox1 == null) {
 			jComboBox1 = new JComboBox(jobs);
@@ -457,11 +412,7 @@ public class applet extends Applet  {
 		return jComboBox1;
 	}
 
-	/**
-	 * This method initializes jTextField	
-	 * 	
-	 * @return javax.swing.JTextField	
-	 */
+	//Creates jTextField11 and sets the field length, tooltip etc.
 	private JTextField getJTextField11() {
 		if (jTextField11 == null) {
 			jTextField11 = new JTextField();
@@ -474,12 +425,8 @@ public class applet extends Applet  {
 		return jTextField11;
 	}
 
-	/**
-	 * This method initializes jTextField11	
-	 * 	
-	 * @return javax.swing.JTextField	
-	 */
-	private JTextField getJTextField112() {
+	//Creates jTextField12 and sets the field length, tooltip etc.
+	private JTextField getJTextField12() {
 		if (jTextField12 == null) {
 			jTextField12 = new JTextField();
 			jTextField12.setToolTipText("Mobile Number");
@@ -490,11 +437,7 @@ public class applet extends Applet  {
 		return jTextField12;
 	}
 
-	/**
-	 * This method initializes jButton	
-	 * 	
-	 * @return javax.swing.JButton	
-	 */
+	//Creates jButton and sets it so that when clicked, the method database() is called.
 	private JButton getJButton() {
 		if (jButton == null) {
 			jButton = new JButton();
@@ -502,20 +445,17 @@ public class applet extends Applet  {
 			jButton.addActionListener(new java.awt.event.ActionListener() {
 				public void actionPerformed(java.awt.event.ActionEvent e) {
 					database();
-					redirect();
 				}
 			});
 		}
 		return jButton;
 	}
 
-	/**
-	 * This method initializes jComboBox2	
-	 * 	
-	 * @return javax.swing.JComboBox	
-	 */
-	
+	//Creates the string array variable titles. It contains a list of all the possible titles
+	//people can select in the form
 	String[] titles = { "Mr", "Mrs", "Miss", "Ms" };
+	
+	//Creates jComboBox2 and sets the options to the string array titles
 	private JComboBox getJComboBox2() {
 		if (jComboBox2 == null) {
 			jComboBox2 = new JComboBox(titles);
@@ -523,76 +463,164 @@ public class applet extends Applet  {
 		return jComboBox2;
 	}
 
+	//Sets up the standard class database()
 	public void database() {
+			//Creates a string called title that get's the selected item from jComboBox2
 			String title = (String) jComboBox2.getSelectedItem();
+			
+			//Creates a string called forename that get's the text from jTextField0
 			String forename = jTextField0.getText();
+			
+			//Creates a string called surname that get's the text from jTextField1
 			String surname = jTextField1.getText();
+			
+			//Creates a string called address0 that get's the text from jTextField2
 			String address0 = jTextField2.getText();
+			
+			//Creates a string called address1 that get's the text from jTextField3
 			String address1 = jTextField3.getText();
+			
+			//Creates a string called address2 that get's the text from jTextField4
 			String address2 = jTextField4.getText();
+			
+			//Creates a string called address3 that get's the text from jTextField5
 			String address3 = jTextField5.getText();
+			
+			//Creates a string called address4 that get's the text from jTextField6
 			String address4 = jTextField6.getText();
+			
+			//Creates a string called address5 that get's the text from jTextField7
 			String address5 = jTextField7.getText();
+			
+			//Creates a string called postcode that get's the text from jTextField8
 			String postcode = jTextField8.getText();
+			
+			//Creates a string called phone that get's the text from jTextField9
 			String phone = jTextField9.getText();
+			
+			//Creates a string called email that get's the text from jTextField10
 			String email = jTextField10.getText();
+			
+			//Creates a string called type that get's the selected item from jComboBox1
 			String type = (String) jComboBox1.getSelectedItem();
+			
+			//Creates a string called fax that get's the text from jTextField11
 			String fax = jTextField11.getText();
+			
+			//Creates a string called mobile that get's the text from jTextField12
 			String mobile = jTextField12.getText();
+			
+			//Creates a string called insertString that will insert the variables (see above)
+			//into the relevant fields in the MySQL table
 			String insertString = "insert into customers (title, forename, surname, address0, address1, address2, address3, address4, address5, postcode, phone, email, type, fax, mobile) values('"+title+"', '"+forename+"', '"+surname+"', '"+address0+"', '"+address1+"', '"+address2+"', '"+address3+"', '"+address4+"', '"+address5+"', '"+postcode+"', '"+phone+"', '"+email+"', '"+type+"', '"+fax+"', '"+mobile+"')";
+			
+			//Uses Statement from java.sql to create a statement called stmt
+			//Needs to be directly referenced as java.sql.Statement to avoid confusion with
+			//java.beans.Statement
 			java.sql.Statement stmt;
-			 Connection con = null;
+			
+			//Uses Connection to create a null connection called con
+			Connection con = null;
 
 	           try
 	           {
 
-	               Class.forName ("com.mysql.jdbc.Driver").newInstance ();
-	               String serverName = "localhost";
-	               String mydatabase = "dtelectrics";
-	               String url = "jdbc:mysql://" + serverName +  "/" + mydatabase; // a JDBC url
-	               String username = "dtelectrics";
-	               String password = "passw0rd";
-	               con = DriverManager.getConnection(url, username, password);
+	        	   	//Creates a new JDBC instance
+	        	   	Class.forName ("com.mysql.jdbc.Driver").newInstance ();
+	        	   	
+	        	   	/*
+	        	   	 * IMPORTANT: For obvious reasons the following variables such as
+	        	   	 * mydatabase, username and password have been changed so that an
+	        	   	 * attacker can't fill up the database with meaningless entries.	        	   	
+	        	   	 */
+	        	   	
+	        	   	
+	        	   	//Creates a variable called serverName with the value of localhost
+	        	   	//This will set the server name as localhost
+	        	   	//Needs to be changed in a production environment
+	        	   	String serverName = "localhost";
+	        	   	
+	        	   	//Creates a variable called mydatabase with the value of dtelectrics
+	        	   	//This will set the name of the database to dtelectrics
+	        	   	//Needs to be changed in a production environment
+	        	   	String mydatabase = "dtelectrics";
+	        	   	
+	        	   	//Creates a variable called url that combines the previous along with
+	        	   	//some other info
+	        	   	String url = "jdbc:mysql://" + serverName +  "/" + mydatabase;
+	        	   	
+	        	   	//Creates a variable called username with the value of dtelectrics
+	        	   	//This will set the username to log in as to dtelectrics
+	        	   	//Needs to be changed in a production environment
+	        	   	String username = "dtelectrics";
+	        	   	
+	        	   	//Creates a variable called password with the value of cr1ppl34t0r
+	        	   	//This will set the password to log in with to cr1ppl34t0r
+	        	   	//Needs to be changed in a production environment
+	        	   	String password = "cr1ppl34t0r";
+	        	   	
+	        	   	//Uses the previously created connection con to connect to the database
+	        	   	//using the variables url, username and password
+	        	   	con = DriverManager.getConnection(url, username, password);
 
-	        	     // Do something with the Connection
-
-	               stmt = con.createStatement();
-	   	   		stmt.executeUpdate(insertString);
+	        	   	//The previously created statement stmt uses the previously created
+	        	   	//connection con to create a statement
+	        	   	stmt = con.createStatement();
+	        	   	
+	        	   	//stmt then runs the SQL command in the variable insertString
+	        	   	stmt.executeUpdate(insertString);
 
 	            
-	                 
+	           //Checks for any SQL errors
 	           } catch (SQLException ex) {
-	        	     // handle any errors
-	        	     System.out.println("SQLException: " + ex.getMessage());
-	        	     System.out.println("SQLState: " + ex.getSQLState());
-	        	     System.out.println("VendorError: " + ex.getErrorCode());
-	        	 }
-
-	           catch (Exception e)
-	           {
+	        	    //If there are errors prints out the following debugging info:
+	        	   	//SQL Exception number, SQL State and Vendor Error Number
+	        	   	System.out.println("SQLException: " + ex.getMessage());
+	        	    System.out.println("SQLState: " + ex.getSQLState());
+	        	    System.out.println("VendorError: " + ex.getErrorCode());
+	        	
+	        	//Checks for any other errors
+	           } catch (Exception e) {
+	        	   //Prints out an error message informing the user about the unknown error
+	        	   //Clarification: Will show up in the Java console not the form
 	               System.err.println ("UNKOWN ERROR: Cann't connect to database");
-	           }
-	           finally
-	           {
-	               if (con != null)
+	           
+	               
+                
+
+	           
+	           } finally {
+	        	   //If connection isn't null
+	        	   //(although confusing means connection is finished)
+	        	   if (con != null)
 	               {
 	                   try
 	                   {
-	                       con.close ();
+	                	   //Close the connection
+	                	   con.close ();
+	                	   
+	                	   //Print out a message to the Java console saying that the
+	                	   //connection has been disconnected
 	                       System.out.println ("Disconnected from database");
+	                       
+	    	               //Increases the length of jButton so more text can fit
+	    	               jButton.setSize(90, 25);               
+	    	               
+	    	               //Sets the text of jButton to thanks
+	    	               jButton.setText("Thanks");	       
+	    	               
+	    	               //Sets the text colour of jButton to red
+	    	               jButton.setForeground(Color.red);
 	                   }
-	                   catch (Exception e) { /* ignore close errors */ }
+	                   catch (Exception e) {
+	                	   /* Ignores any errors that happen when
+	                   		*closing the connection
+	                	    */ 
+	                	   }
 	               }
 	           }
-	
-jLabel.setText("Thank you");
-jLabel.setForeground(Color.red);
-
-}
-	
-public void redirect() {
-	
-}
-
-	
 	}
+	
+
+	
+}
