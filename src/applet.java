@@ -25,6 +25,26 @@ import java.applet.*;
 //Sets up the class 'applet' as extending Applet (from java.applet.*)
 public class applet extends Applet  {
 
+	
+    /**
+     * This method checks if a String contains only numbers
+     */
+    public boolean anyNumbers(String str) {
+        
+        //It can't contain only numbers if it's null or empty...
+        if (str == null || str.length() == 0)
+            return true;
+        
+        for (int i = 0; i < str.length(); i++) {
+
+            //If we find a digit character we return true.
+            if (Character.isDigit(str.charAt(i)))
+                return true;
+        }
+        
+        return false;
+    }
+    
 	//Adds a serialVersionUID string to shut Eclipse up
 	private static final long serialVersionUID = -663433958959361836L;
 	
@@ -475,7 +495,7 @@ public class applet extends Applet  {
 			String title = (String) jComboBox2.getSelectedItem();
 			
 
-			if (jTextField0.getText().equals(""))
+			if (jTextField0.getText().equals("") || anyNumbers(jTextField0.getText()))
 			{
 				jLabel1.setForeground(Color.red);
 				valid = 1;
@@ -483,9 +503,10 @@ public class applet extends Applet  {
 				jLabel1.setForeground(Color.black);
 				//Creates a string called forename that get's the text from jTextField0
 				forename = jTextField0.getText();
+				
 			}
 			
-			if (jTextField1.getText().equals(""))
+			if (jTextField1.getText().equals("") || anyNumbers(jTextField1.getText()))
 			{
 				jLabel2.setForeground(Color.red);
 				valid = 1;
@@ -495,7 +516,7 @@ public class applet extends Applet  {
 				surname = jTextField1.getText();
 			}
 			
-			if (jTextField2.getText().equals(""))
+			if (jTextField2.getText().equals("") || jTextField2.getText().length() <= 1)
 			{
 				jLabel3.setForeground(Color.red);
 				valid = 1;
@@ -504,21 +525,58 @@ public class applet extends Applet  {
 				//Creates a string called address0 that get's the text from jTextField2
 				address0 = jTextField2.getText();
 			}
-			
-			//Creates a string called address1 that get's the text from jTextField3
-			address1 = jTextField3.getText();
 
-			//Creates a string called address2 that get's the text from jTextField4
-			address2 = jTextField4.getText();
+
+			
+			if (jTextField3.getText().length() == 1)
+			{
+					jLabel4.setForeground(Color.red);
+					valid = 1;
+			} else {
+					jLabel4.setForeground(Color.black);
+					//Creates a string called address1 that get's the text from jTextField3
+					address1 = jTextField3.getText();
+			}
+
+			if (jTextField4.getText().length() == 1)
+			{
+					jLabel5.setForeground(Color.red);
+					valid = 1;
+			} else {
+					jLabel5.setForeground(Color.black);
+					//Creates a string called address2 that get's the text from jTextField4
+					address2 = jTextField4.getText();
+			}
+
+			if (jTextField5.getText().length() == 1)
+			{
+					jLabel6.setForeground(Color.red);
+					valid = 1;
+			} else {
+					jLabel6.setForeground(Color.black);
+					//Creates a string called address3 that get's the text from jTextField5
+					address3 = jTextField5.getText();
+			}
 		
-			//Creates a string called address3 that get's the text from jTextField5
-			address3 = jTextField5.getText();
-						
-			//Creates a string called address4 that get's the text from jTextField6
-			address4 = jTextField6.getText();
-					
-			//Creates a string called address5 that get's the text from jTextField7
-			address5 = jTextField7.getText();
+			if (jTextField6.getText().length() == 1)
+			{
+					jLabel7.setForeground(Color.red);
+					valid = 1;
+			} else {
+					jLabel7.setForeground(Color.black);
+					//Creates a string called address1 that get's the text from jTextField6
+					address4 = jTextField6.getText();
+			}
+			
+			if (jTextField7.getText().length() == 1)
+			{
+					jLabel8.setForeground(Color.red);
+					valid = 1;
+			} else {
+					jLabel8.setForeground(Color.black);
+					//Creates a string called address1 that get's the text from jTextField7
+					address5 = jTextField7.getText();
+			}
 						
 			if (jTextField8.getText().equals("") || jTextField8.getText().length() <6 || jTextField8.getText().length() >8)
 			{
@@ -557,11 +615,17 @@ public class applet extends Applet  {
 				jLabel10.setForeground(Color.red);
 				valid = 1;
 			} else {
+				if (jTextField10.getText().matches("[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,4}"))
+				{
 					jLabel10.setForeground(Color.black);
 					//Creates a string called email that get's the text from jTextField10
 					email = jTextField10.getText();
+				} else {
+					jLabel9.setForeground(Color.red);
+					valid = 1;					
+				}
 			}
-			
+		
 			//Creates a string called type that get's the selected item from jComboBox1
 			String type = (String) jComboBox1.getSelectedItem();
 			
@@ -580,7 +644,7 @@ public class applet extends Applet  {
 				valid = 1;
 			}
 			
-			if (jTextField12.getText().equals("^\\(?(\\d{3})\\)?[- ]?(\\d{3})[- ]?(\\d{5})$"))
+			if (jTextField12.getText().matches("^\\(?(\\d{3})\\)?[- ]?(\\d{3})[- ]?(\\d{5})$"))
 			{
 				jLabel13.setForeground(Color.black);
 				//Creates a string called mobile that get's the text from jTextField12
@@ -706,6 +770,9 @@ public class applet extends Applet  {
 	                	   }
 	               }
 	           }
+					
+					
+					
 			}
 	}
 	
